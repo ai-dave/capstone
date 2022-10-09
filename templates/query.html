@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Gene Family Prediction {% endblock %}</h1>
+    <form method="post">
+        <label for="genefam">Annotation</label>
+        <br>
+        <input type="text" name="annotation"
+               placeholder="Annotation"
+               value="{{ request.form['annotation'] }}"></input>
+        <br>
+
+        <label for="sequence">Sequence</label>
+        <br>
+        <textarea name="sequence"
+                  placeholder="sequence"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['sequence'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

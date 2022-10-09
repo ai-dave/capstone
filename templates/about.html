@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} About {% endblock %}</h1>
+    <p>
+    <a href="https://github.com/ai-dave/capstone">git repo</a></br>
+    <a href="https://github.com/ai-dave/ml-gene-pub">preliminary work</a></br>
+    </p>
+    <p>
+        <h2>Usage:</h2>
+        <p>
+            <h3>Browser App</h3>
+        </p>
+        <p>
+	    <h3>API</h3>
+            <code>curl -H "Content-Type: application/json"  http://45.33.108.171:80/api/  -d @payload-1.json</code>
+            <code style="white-space: nowrap;">
+	        $ cat payload-1.json</br>
+	        {</br>
+	        &nbsp;&nbsp;&nbsp;"sequence": "atggcgcccacctggggccctggcatggtgtctgtggttggtcccatgggcctccttgtggtcctgctcgttggaggctgtgcagcagaagagccccccaggtttatcaaagaacccaaggaccagatcggcgtgtcggggggcgtggcctctttcgtgtgtcaggccacgggtgaccccaagccacgagtgacctggaacaagaagggcaagaaggtcaactctcagcgctttgagacgattgagtttgatgagagtgcaggggcagtgctgaggatccagccgctgaggacaccgcgggatgaaaacgtgtacgagtgtgtggcccagaactcggttggggagatcacagtccatgccaagctcactgtcctccgaggaccttga",</br>
+	        &nbsp;&nbsp;&nbsp;"annotation": "Chimp-Tyrosine-phosphotase-SEQUENCE-141"</br>
+	        }
+            </code>
+        </p>
+    </p>
+
+{% endblock %}
