@@ -50,18 +50,12 @@ def query():
             flash('Sequence is required!')
         else:
             X = sequence.lower()
-            X2 = na_read.make_kmer_sentence(6, sequence)
-            X_embedding = cvr.transform([X2])
-            y_pred = cl.predict(X_embedding)
-            iy = int(y_pred[0])
-            y_pred_text = genefamilies[iy] if (iy>0 and iy<=len(genefamilies)) else '---'
+            y_pred_text = predict(sequence)
 
-            app.logger.info(f'data: len(X): [{len(X)}] - [{X[:30]}]...[{X[-30:]}], [{X2[:30]}]...[{X2[-30:]}], predict: [{y_pred}]: [{y_pred_text}]')
             my_datetime=datetime.fromtimestamp(time.time())
             datetime_local = my_datetime.astimezone(pytz.timezone('US/Pacific')).strftime('%Y-%m-%d %H:%M:%S %Z%z')
 
             messages.append({'annotation': annotation, 'length':  len(X), 'start': X[:30], 'end': X[-30:], 'prediction': y_pred_text, 'timestamp': datetime_local})
-            #messages.append({'annotation': annotation, 'length':  len(X):, 'start': X[:30] + '...' + X[-30:], 'prediction': y_pred_text, 'timestamp': datetime.fromtimestamp(time.time())})
             return redirect(url_for('home'))
 
     return render_template('query.html')
@@ -85,26 +79,34 @@ def about():
 
 
 @app.route('/api/',methods=['POST'])
-def predict():
+def api():
     data = request.get_json(force=True)
 
     sequence = data['sequence']
     annotation = data['annotation']
+    y_pred_text = predict(sequence)
+
+    response = {
+        "prediction": y_pred_text,
+        "annotation": annotation
+    }
+    return jsonify(response)
+
+
+
+def predict(sequence):
     X = sequence.lower()
     X2 = na_read.make_kmer_sentence(6, sequence)
+
     X_embedding = cvr.transform([X2])
     y_pred = cl.predict(X_embedding)
     iy = int(y_pred[0])
     y_pred_text = genefamilies[iy] if (iy>0 and iy<=len(genefamilies)) else '---'
 
     app.logger.info(f'data: len(X): [{len(X)}] - [{X[:30]}]...[{X[-30:]}], [{X2[:30]}]...[{X2[-30:]}], predict: [{y_pred}]: [{y_pred_text}]')
+    return y_pred_text
 
-    response = {
-        "prediction": y_pred_text,
-        "annotation": annotation
-    }
-    #return jsonify(y_pred_text)
-    return jsonify(response)
+
 
 
 if __name__ == '__main__':

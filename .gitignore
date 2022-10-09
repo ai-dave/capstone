@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# vi
+*.swp
+
+# bioinformatics
+ncbi_dataset/
+
 # C extensions
 *.so
 

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	          overflow:hidden;padding:10px 5px;word-break:normal;}
+	          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+	.tg .tg-predict{background-color: gold}
+    </style>
+    <h1>{% block title %} Predictions {% endblock %}</h1>
+    {% for message in messages | reverse %}
+        <div class='message'>
+            <table class="tg">
+                <tr>
+			<td class="tg-0lax"  rowspan="3" style="vertical-align: top;"><b>{{ message['timestamp'] }}</b></td>
+                    <td class="tg-0lax">{{ message['annotation'] }}</td>
+                </tr>
+		<tr><td class="tg-01ax">{{ message['length'] }} bp.  Sequence: [{{ message['start'] }}...{{ message['end'] }}]</td></tr>
+		<tr><td class="tg-predict"><b>class:</b> {{ message['prediction'] }}</td></tr>
+	    </table>
+        </div>
+    {% endfor %}
+
+    <table class="tg">
+      <thead>
+        <tr>
+          <td class="tg-0lax">Gene family</td>
+          <td class="tg-0lax">Number</td>
+          <td class="tg-0lax">Class Label</td>
+        </tr>
+      </thead>
+      <tr>
+        <td class="tg-0lax">G protein coupled receptors</td>
+        <td class="tg-0lax">531</td>
+        <td class="tg-0lax">1</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Tyrosine kinase</td>
+        <td class="tg-0lax">534</td>
+        <td class="tg-0lax">2</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Tyrosine phospotase</td>
+        <td class="tg-0lax">349</td>
+        <td class="tg-0lax">3</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Synthetase</td>
+        <td class="tg-0lax">632</td>
+        <td class="tg-0lax">4</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Synthase</td>
+        <td class="tg-0lax">711</td>
+        <td class="tg-0lax">5</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Ion channel</td>
+        <td class="tg-0lax">240</td>
+        <td class="tg-0lax">6</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Transcription factor</td>
+        <td class="tg-0lax">1341</td>
+        <td class="tg-0lax">7</td>
+      </tr>
+    </table>
+{% endblock %}
