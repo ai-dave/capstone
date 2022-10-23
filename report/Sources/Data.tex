@@ -21,7 +21,7 @@ Each sequence in the corpus of sequence data was annotated with one of seven Gen
 
 \subsection{Preprocessing: K-mer vectorization}
 %
-The nucleotide bases comprise an \textit{alphabet} of the four letters \textit{b} in $\{A, G, C, T\}$.  A \textit{K-mer} is a \textit{k}-letter word comprised from \textit{letters} of our \textit{alphabet}.  Here we let \textit{k=6}.  The \textit{dictionary} contains up to $4^{6}$ \textit{words}, each 6 letters in length.\footnote{Dictionary size calculated as $alphabetSize^{wordLength}$ $\Rightarrow$ $4^{6}$ $\Rightarrow$ 4,096 words.}
+The nucleotide bases comprise an \textit{alphabet} of the four letters \textit{b} in $\{A, G, C, T\}$.  A \textit{K-mer} is a \textit{k}-letter word comprised from \textit{letters} of this \textit{alphabet}.  Here we let \textit{k=6}.  The \textit{dictionary} contains up to $4^{6}$ \textit{words}, each 6 letters in length.\footnote{Dictionary size calculated as $alphabetSize^{wordLength}$ $\Rightarrow$ $4^{6}$ $\Rightarrow$ 4,096 words.}
 
 \autoref{fig:kmers} above depicts 6bp \textit{"words"} derived from a sequence of the original corpus.  From this point on, all vectorization is based on a corpus of \textit{6-mer "words"} rather than the original sequences.
 %
