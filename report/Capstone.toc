@@ -6,9 +6,11 @@
 \contentsline {section}{\numberline {2}Data}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Source}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Labeling}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Preprocessing: K-Mer vectorization}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Feature Extraction/Embedding}{5}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Model Building}{5}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Model Performance}{5}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Model Deployment}{5}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.3}Preprocessing: K-mer vectorization}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Feature Engineering}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Feature Extraction/Embedding}{6}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Modeling}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Training}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Performance}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Deployment}{7}{subsection.4.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
