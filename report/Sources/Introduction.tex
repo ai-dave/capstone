@@ -1,0 +1,46 @@
+\section{Introduction}
+
+\begin{table}[tb]
+  \centering
+  \begin{tabular}{lSS}
+    \toprule
+    \textbf{Gene Family}      & \textbf{Count} & \textbf{Class Label}\\
+    \midrule
+    G protein coupled receptors	 & 531 & 1\\
+    Tyrosine kinase	 & 534	 & 2\\
+    Tyrosine phospotase	 & 349	 & 3\\
+    Synthetase	 & 632	 & 4\\
+    Synthase	 & 711	 & 5\\
+    Ion channel	 & 240	 & 6\\
+    Transcription factor	 & 1341	 & 7\\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    Gene Families represented by Human DNA coding sequences.
+  }
+  \label{tab:GeneFamilies}
+\end{table}
+
+Here we examine NLP algorithms to develop a Machine Learning model for making predictions on sequences of Nucleic Acid text. Specifically, we train a Multinomial Na\"ive Bayes classifier on Human DNA Coding Sequences to predict Gene Families. In addition to Human sequences, predictive testing was also performed in Chimpanzee and Dog DNA coding sequences.
+%
+\autoref{tab:GeneFamilies} above shows Gene Families in the dataset.
+
+\subsection{Motivation}
+
+This Capstone project was selected to provide an opportunity to explore NLP applications to biological text-based sequence data.
+
+
+\subsection{Exploratory Work}
+
+Prior to this Capstone project, recent work in ML applied to biological sequences was surveyed in order to identify the feasability and scope of a project appropriate for this course.  Method feasability focused on LDA, NB and LSTM models. Some of this work is linked to Jupyter notebooks or original papers and includes protein classification\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/protein-classification.ipynb}},
+Sapien/Neandertal sequence classification\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Deep_Learning_on_Ancient_DNA.ipynb}},
+Neandertal DNA introgression\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Deep_Learning_Neanderthal_Introgression.ipynb}}, 
+CRISPR gRNA design tools\footnote{\url{https://pubmed.ncbi.nlm.nih.gov/31533522/}},
+Bacterial Classification with RNNs\footnote{\url{https://github.com/lelugom/wgs_classifier}}, 
+Bacteria taxonomic classification\footnote{\url{https://www.researchgate.net/publication/348432006_Bacteria_taxonomic_classification_using_Machine_learning_models}},
+Ribosmal RNA analysis\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/gnb-rdp.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/lda-compare-silva.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/lda-rdp.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/lstm-random-noise.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/lstm-rdp.ipynb}},
+Taxonomy classification\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/ncbi_lstm_poc.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Eukaryota-Amoebozoa-Discosea.ipynb}},
+Wolf/Dhole classification\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Dhole-Wolfe-LDA.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Dhole-Wolfe-LSTM.ipynb}}\textsuperscript{,}\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/Dhole-Wolfe.ipynb}}.
+
+\subsection{Capstone Project Work}
+Jupyter notebook for the Capstone Project is is available from a github repo\footnote{\url{https://github.com/ai-dave/ml-gene-pub/blob/main/gene-family-human-chimp-dog.ipynb}}.

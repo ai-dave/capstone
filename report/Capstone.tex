@@ -1,0 +1,58 @@
+\documentclass{mimore}
+
+\newcommand{\sAuthor  }{Dave Mannion}
+\newcommand{\sTitle   }{Gene Family Prediction \& ML}
+\newcommand{\sSubtitle}{Machine Learning and DNA Sequence Classification}
+\newcommand{\sSubject }{Bootcamp Capstone Report}
+\newcommand{\sCourse  }{UCSD Machine Learning \& Engineering}
+\newcommand{\sDate    }{\today}
+
+\bibliography{Capstone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TikZ & pgfplots
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+
+% Permits accessing the smallest and largest x value of a plot
+\makeatletter
+  \newcommand{\pgfplotsxmin}{\pgfplots@xmin}
+  \newcommand{\pgfplotsxmax}{\pgfplots@xmax}
+\makeatother
+
+% Permits accessing the smallest and largest y value of a plot
+\makeatletter
+  \newcommand{\pgfplotsymin}{\pgfplots@ymin}
+  \newcommand{\pgfplotsymax}{\pgfplots@ymax}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin of main document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  \maketitle
+
+  \tableofcontents
+  \bookmarksetup{startatroot}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Add your sources here. You may also directly input LaTeX commands
+  % here, but the use of `\include` is strongly encouraged.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \include{Sources/Introduction}
+  \include{Sources/Content}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Back matter: don't change anything here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \bookmarksetup{startatroot}
+  \printbibliography
+	
+\end{document}
