@@ -1,0 +1,46 @@
+\section{Results: Chimpanzee DNA}
+
+\autoref{tab:confusion-chimpanzee} and \autoref{tab:confusion-chimpanzee-summary} above show results of testing chimpanzee DNA Coding sequences against a model trained on Human DNA for the seven Gene Families:
+%
+\begin{table}[tb]
+  \centering
+  \begin{tabular}[t]{lSSSSSSSSS}
+    \toprule
+%    \textbf{Predicted} 
+    \begin{tabular}[l]{@{}c@{}}\textbf{Predicted}\\ \textbf{Actual}\end{tabular}
+    & \textbf{1}  & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5}  & \textbf{6} & \textbf{7}\\
+
+    \midrule
+    1 & 224 &   0 &   0 &   0 &   3 &   0 &   6\\
+    2 &   0 & 182 &   0 &   0 &   0 &   0 &   3\\
+    3 &   0 &   0 & 137 &   0 &   0 &   0 &   7\\
+    4 &   0 &   0 &   0 & 222 &   3 &   0 &   7\\
+    5 &   2 &   0 &   0 &   0 & 259 &   0 &   0\\
+    6 &   1 &   0 &   0 &   0 &   0 & 108 &   0\\
+    7 &   0 &   0 &   0 &   0 &   1 &   0 & 521\\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    Confusion matrix for predictions on chimpanzee DNA sequences.
+  }
+  \label{tab:confusion-chimpanzee}
+\end{table}
+%
+%
+\begin{table}[tb]
+  \centering
+  \begin{tabular}{lSS}
+    \toprule
+    \midrule
+	accuracy & 0.984\\
+	precision & 0.984\\
+	recall & 0.984\\
+	f1 & 0.984\\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    Accuracy, precision, recall
+  }
+  \label{tab:confusion-chimpanzee-summary}
+\end{table}
+%

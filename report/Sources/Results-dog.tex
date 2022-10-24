@@ -1,0 +1,46 @@
+\section{Results: Dog DNA}
+
+\autoref{tab:confusion-dog} and \autoref{tab:confusion-dog-summary} above show results of testing dog DNA Coding sequences against a model trained on Human DNA for the seven Gene Families.
+%
+\begin{table}[tb]
+  \centering
+  \begin{tabular}[t]{lSSSSSSSSS}
+    \toprule
+%    \textbf{Predicted} 
+    \begin{tabular}[l]{@{}c@{}}\textbf{Predicted}\\ \textbf{Actual}\end{tabular}
+    & \textbf{1}  & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5}  & \textbf{6} & \textbf{7}\\
+
+    \midrule
+    1 & 119 &   0 &   0 &   0 &   1 &   0 &   7\\
+    2 &   0 &  60 &   0 &   0 &   0 &   0 &  14\\
+    3 &   0 &   0 &  45 &   0 &   1 &   0 &  16\\
+    4 &   0 &   0 &   0 &  77 &   2 &   0 &  16\\
+    5 &   6 &   0 &   0 &   1 & 117 &   0 &   7\\
+    6 &   3 &   0 &   0 &   0 &   1 &  51 &   5\\
+    7 &   0 &   0 &   0 &   0 &   0 &   0 & 254\\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    Confusion matrix for predictions on dog DNA sequences.
+  }
+  \label{tab:confusion-dog}
+\end{table}
+%
+%
+\begin{table}[tb]
+  \centering
+  \begin{tabular}{lSS}
+    \toprule
+    \midrule
+	accuracy & 0.900\\
+	precision & 0.916\\
+	recall & 0.900\\
+	f1 & 0.900\\
+    \bottomrule
+  \end{tabular}
+  \caption{
+    Accuracy, precision, recall
+  }
+  \label{tab:confusion-dog-summary}
+\end{table}
+%

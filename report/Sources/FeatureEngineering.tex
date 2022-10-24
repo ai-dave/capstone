@@ -13,22 +13,33 @@
     \centering
     \includegraphics[scale=0.4]{count_vector}
     \caption{%
-       4-word n-gram (\textit{4-gram}) phrases generated from 6-mer words representing the original nucleic acid sequence.
+       Counts of (\textit{4-gram}) phrases generated from 6-mer words comprising a Document Vector of a single nucleic acid sequence.
     }
     \label{fig:count-vector}
   \end{figure}
 %
 
-After converting contiguous nucleotide sequences into 6-mer words, \textit{Bag of Words} model was used to produce document vectors.
+After converting contiguous nucleotide sequences into 6-mer words, \textit{Bag of N-grams} model was used to produce document vectors.
 
 
 \subsection{n-grams}
 
-We use CountVectorizer\footnote{\url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html}} to convert k-merized sequences to a matrix of token counts.
-
+We use \textit{CountVectorizer}\footnote{\url{https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html}} to convert k-merized sequences to a matrix of 4-gram counts.
 \autoref{fig:ngrams} above shows 4-gram phrases generated from a series of 6-mers of the original sequence. 
 %
 \subsection{Frequency Vectorization}
 The frequencies of ordered 4-grams from each single nucleic acid k-merized sequence will produce a histogram based on the occurance of the 4-gram.
-\autoref{fig:count-vector} above shows a Count Vector formed from 4-gram frequencies. 
+\autoref{fig:count-vector} above shows a Count Vector formed from 4-gram frequencies. Each Document Vector is a representation of a single nucleic acid sequence.
+%
+
+\subsection{Implementation}
+Python code implementing \textit{CountVectorizer} and \textit{pickle}:
+\begin{minted}{python}
+cv = CountVectorizer(ngram_range=(4,4), lowercase=False) # 4-word n-gram
+X = cv.fit_transform(human_texts)
+X_chimp = cv.transform(chimp_texts)
+X_dog = cv.transform(dog_texts)
+
+pickle.dump(cv, open('CountVectorizer-human.pkl','wb'))
+\end{minted}
 %

@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{cv} \PYG{o}{=} \PYG{n}{CountVectorizer}\PYG{p}{(}\PYG{n}{ngram\PYGZus{}range}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{),} \PYG{n}{lowercase}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 4\PYGZhy{}word n\PYGZhy{}gram}
+\PYG{n}{X} \PYG{o}{=} \PYG{n}{cv}\PYG{o}{.}\PYG{n}{fit\PYGZus{}transform}\PYG{p}{(}\PYG{n}{human\PYGZus{}texts}\PYG{p}{)}
+\PYG{n}{X\PYGZus{}chimp} \PYG{o}{=} \PYG{n}{cv}\PYG{o}{.}\PYG{n}{transform}\PYG{p}{(}\PYG{n}{chimp\PYGZus{}texts}\PYG{p}{)}
+\PYG{n}{X\PYGZus{}dog} \PYG{o}{=} \PYG{n}{cv}\PYG{o}{.}\PYG{n}{transform}\PYG{p}{(}\PYG{n}{dog\PYGZus{}texts}\PYG{p}{)}
+
+\PYG{n}{pickle}\PYG{o}{.}\PYG{n}{dump}\PYG{p}{(}\PYG{n}{cv}\PYG{p}{,} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}CountVectorizer\PYGZhy{}human.pkl\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}wb\PYGZsq{}}\PYG{p}{))}
+\end{Verbatim}
