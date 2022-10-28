@@ -8,8 +8,6 @@ from flask import Flask, request, jsonify, render_template, url_for, redirect, f
 #import pandas as pd
 import pickle
 
-#from ms import app
-#from ms.functions import get_model_response
 
 app = Flask(__name__)
 
@@ -30,9 +28,6 @@ genefamilies = {
     7: "Transcription factor"
 }
 
-#model_name = "Breast Cancer Wisconsin (Diagnostic)"
-#model_file = 'model_binary.dat.gz'
-#version = "v1.0.0"
 
 @app.route('/')
 def home2():
